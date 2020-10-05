@@ -1,6 +1,7 @@
 package best.programming;
 
 import java.util.function.Function;
+import java.util.function.Supplier;
 
 public class Challenge {
 
@@ -26,6 +27,11 @@ public class Challenge {
             }
         };
         // End of #1
+
+        // #4 Use the Supplier interface to write a text
+        Supplier<String> iLoveJava = () -> "I love Java!";
+        System.out.println(iLoveJava.get());
+        // End of #4
     }
 
     // #2 Write the following methods as a lambda expression
@@ -49,4 +55,10 @@ public class Challenge {
         return returnVal.toString();
     };
     // End of #2
+
+    // #3 Wrap lambdaEverySecondFunction in method
+    public static String everySecondCharacter(Function<String, String> getEverySecondChar, String inputText){
+        return getEverySecondChar.apply(inputText);
+    }
+    // End of #3
 }
